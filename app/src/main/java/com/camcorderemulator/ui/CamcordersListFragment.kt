@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.camcorderemulator.data.CamcordersRepoImpl
+import com.camcorderemulator.data.CamcordersRoomRepoImpl
 import com.camcorderemulator.ui.recycler.CamcordersAdapter
 import com.gbhomework.camcorderemulator.databinding.FragmentCamcordersListBinding
 
@@ -36,7 +36,7 @@ class CamcordersListFragment : Fragment() {
 
 
     private fun initRecycler() {
-        val camcorders = CamcordersRepoImpl().getAllData()
+        val camcorders = CamcordersRoomRepoImpl().getAllData()
 
         val recycler = binding.frCamcordersListRecycler
         recycler.layoutManager = LinearLayoutManager(requireContext())
