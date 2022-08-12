@@ -1,10 +1,10 @@
-package com.camcorderemulator.data
+package com.camcorderemulator.domain
 
 data class Camcorder(
     val id: Int,
     val name: String,
-    val image: String,
     val vendorCode: String,
-    val cost: Float
+    val cost: String,
+    val angle: String
 ) {
 }
