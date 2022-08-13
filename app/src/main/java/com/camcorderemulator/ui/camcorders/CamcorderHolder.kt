@@ -1,4 +1,4 @@
-package com.camcorderemulator.ui.recycler
+package com.camcorderemulator.ui.camcorders
 
 import android.view.View
 import android.widget.TextView

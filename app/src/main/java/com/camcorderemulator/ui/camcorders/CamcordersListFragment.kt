@@ -1,4 +1,4 @@
-package com.camcorderemulator.ui
+package com.camcorderemulator.ui.camcorders
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.camcorderemulator.data.CamcordersRoomRepoImpl
-import com.camcorderemulator.ui.recycler.CamcordersAdapter
+import com.camcorderemulator.ui.camcorders.CamcordersAdapter
 import com.gbhomework.camcorderemulator.databinding.FragmentCamcordersListBinding
 
 class CamcordersListFragment : Fragment() {
