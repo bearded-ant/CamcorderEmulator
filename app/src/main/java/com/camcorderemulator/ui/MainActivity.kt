@@ -2,6 +2,7 @@ package com.camcorderemulator.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.camcorderemulator.ui.camcorders.CamcordersListFragment
 import com.gbhomework.camcorderemulator.R
 
 class MainActivity : AppCompatActivity() {
