@@ -16,6 +16,7 @@ class App:Application() {
         super.onCreate()
         instance = this
         database = Room.databaseBuilder(this, CamcordersBase::class.java, "camcorders")
+            .createFromAsset("pre_camcorders")
             .build()
     }
 }
