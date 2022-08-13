@@ -6,14 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.camcorderemulator.data.CamcordersRoomRepoImpl
-import com.camcorderemulator.ui.camcorders.CamcordersAdapter
-import com.gbhomework.camcorderemulator.databinding.FragmentCamcordersListBinding
+import androidx.recyclerview.widget.GridLayoutManager
+import com.camcorderemulator.data.ImageRepoImpl
+import com.gbhomework.camcorderemulator.databinding.FragmentGalleryBinding
 
 class GalleryFragment : Fragment() {
 
-    private var _binding: FragmentCamcordersListBinding? = null
+    private var _binding: FragmentGalleryBinding? = null
     private val binding
         get() = _binding!!
 
@@ -22,8 +21,9 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCamcordersListBinding.inflate(layoutInflater)
-        Toast.makeText(requireContext(), "TOST", Toast.LENGTH_SHORT).show()
+        _binding = FragmentGalleryBinding.inflate(layoutInflater)
+        Toast.makeText(requireContext(), "галерея", Toast.LENGTH_SHORT).show()
+
         initRecycler()
 
         return binding.root
@@ -36,12 +36,12 @@ class GalleryFragment : Fragment() {
 
 
     private fun initRecycler() {
-        val camcorders = CamcordersRoomRepoImpl().getAllData()
+        val images = ImageRepoImpl(requireContext()).getImages()
 
-        val recycler = binding.frCamcordersListRecycler
-        recycler.layoutManager = LinearLayoutManager(requireContext())
+        val recycler = binding.frGalleryRecycler
+        recycler.layoutManager = GridLayoutManager(requireContext(),2)
 
-        val adapter = CamcordersAdapter(camcorders)
+        val adapter = GalleryAdapter(images)
         recycler.adapter = adapter
     }
 }

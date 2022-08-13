@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gbhomework.camcorderemulator.R
 
-class GalleryAdapter(private val resources: List<Int>) :
+class GalleryAdapter(private val resources: List<String>) :
     RecyclerView.Adapter<GalleryHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryHolder {

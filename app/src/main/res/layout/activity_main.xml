@@ -7,4 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.camcorderemulator.ui.MainActivity">
 
+    <TextView
+        android:id="@+id/perm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="asdasdasd" />
+
 </FrameLayout>
