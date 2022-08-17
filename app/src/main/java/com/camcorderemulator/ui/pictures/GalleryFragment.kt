@@ -39,7 +39,6 @@ class GalleryFragment : Fragment() {
     private fun initRecycler() {
         val images = ImageRepoImpl(requireContext()).getImages()
         Log.d("что  картинках", images.toString())
-
         val recycler = binding.frGalleryRecycler
         recycler.layoutManager = GridLayoutManager(requireContext(),2)
 
