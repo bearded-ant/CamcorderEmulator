@@ -2,6 +2,7 @@ package com.camcorderemulator.utils
 
 import android.Manifest
 import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -9,44 +10,76 @@ import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.provider.Settings
+import android.util.Log
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.camcorderemulator.ui.MainActivity
 
 
 object PermissionUtils {
 
 
-    fun hasPermissions(context: Context): Boolean {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            Environment.isExternalStorageManager()
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            (ContextCompat.checkSelfPermission(
-                context,
-                Manifest.permission.ACCESS_MEDIA_LOCATION
-            )
-                    == PackageManager.PERMISSION_GRANTED)
-        } else {
-            true
-        }
-    }
+//    @RequiresApi(Build.VERSION_CODES.Q)
+//    fun hasPermissions(context: Context): Boolean {
+//        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            Environment.isExternalStorageManager()
+//        } else
+//            (ContextCompat.checkSelfPermission(
+//                context,
+//                Manifest.permission.ACCESS_MEDIA_LOCATION
+//            )
+//                    == PackageManager.PERMISSION_GRANTED)
+//    }
+//
+//    fun requestPermissions(activity: Activity, requestCode: Int) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            try {
+//                val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
+//                intent.addCategory("android.intent.category.DEFAULT")
+//                intent.data = Uri.parse(String.format("package:%s", activity.packageName))
+//                activity.startActivityForResult(intent, requestCode)
+//            } catch (e: Exception) {
+//                val intent = Intent()
+//                intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION
+//                activity.startActivityForResult(intent, requestCode)
+//            }
+//        } else {
+//            ActivityCompat.requestPermissions(
+//                activity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+//                requestCode
+//            )
+//        }
+//    }
 
-    fun requestPermissions(activity: Activity, requestCode: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            try {
-                val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                intent.addCategory("android.intent.category.DEFAULT")
-                intent.data = Uri.parse(String.format("package:%s", activity.packageName))
-                activity.startActivityForResult(intent, requestCode)
-            } catch (e: Exception) {
-                val intent = Intent()
-                intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION
-                activity.startActivityForResult(intent, requestCode)
+    @RequiresApi(Build.VERSION_CODES.Q)
+     fun requestPermission(activity: MainActivity, arl: ActivityResultLauncher<String>) {
+        when {
+            this.let {
+                ContextCompat.checkSelfPermission(
+                    activity,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+            } == PackageManager.PERMISSION_GRANTED -> {
+                Log.d("разрешение", "получили")
             }
-        } else {
-            ActivityCompat.requestPermissions(
-                activity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                requestCode
-            )
+            this.let {
+                ActivityCompat.shouldShowRequestPermissionRationale(
+                    activity,
+                    Manifest.permission.CAMERA
+                )
+            } -> {
+                arl.launch(
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+            }
+            else -> {
+                arl.launch(
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+            }
         }
     }
 }
