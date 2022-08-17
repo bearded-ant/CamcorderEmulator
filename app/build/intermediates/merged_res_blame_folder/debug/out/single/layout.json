@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.gbhomework.camcorderemulator.app-mergeDebugResources-48:/layout/fragment_camcorders_list.xml",
+        "source": "com.gbhomework.camcorderemulator.app-main-51:/layout/fragment_camcorders_list.xml"
+    },
+    {
+        "merged": "com.gbhomework.camcorderemulator.app-mergeDebugResources-48:/layout/fragment_gallery.xml",
+        "source": "com.gbhomework.camcorderemulator.app-main-51:/layout/fragment_gallery.xml"
+    },
+    {
+        "merged": "com.gbhomework.camcorderemulator.app-mergeDebugResources-48:/layout/item_picture.xml",
+        "source": "com.gbhomework.camcorderemulator.app-main-51:/layout/item_picture.xml"
+    },
+    {
+        "merged": "com.gbhomework.camcorderemulator.app-mergeDebugResources-48:/layout/item_camcorder.xml",
+        "source": "com.gbhomework.camcorderemulator.app-main-51:/layout/item_camcorder.xml"
+    },
+    {
+        "merged": "com.gbhomework.camcorderemulator.app-mergeDebugResources-48:/layout/activity_main.xml",
+        "source": "com.gbhomework.camcorderemulator.app-main-51:/layout/activity_main.xml"
+    }
+]
