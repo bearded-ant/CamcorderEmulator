@@ -1,7 +1,6 @@
 package com.camcorderemulator.ui.camcorders
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +37,7 @@ class CamcordersListFragment : Fragment() {
 
     private fun initRecycler() {
         val camcorders = CamcordersRoomRepoImpl().getAllData()
-            Log.d("что там", "$camcorders")
+
         val recycler = binding.frCamcordersListRecycler
         recycler.layoutManager = LinearLayoutManager(requireContext())
 

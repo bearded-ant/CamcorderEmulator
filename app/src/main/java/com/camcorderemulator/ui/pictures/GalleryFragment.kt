@@ -1,7 +1,6 @@
 package com.camcorderemulator.ui.pictures
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +37,6 @@ class GalleryFragment : Fragment() {
 
     private fun initRecycler() {
         val images = ImageRepoImpl(requireContext()).getImages()
-        Log.d("что  картинках", images.toString())
 
         val recycler = binding.frGalleryRecycler
         recycler.layoutManager = GridLayoutManager(requireContext(),2)
