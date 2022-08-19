@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gbhomework.camcorderemulator.R
 
 class GalleryHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private val name = itemView.findViewById<TextView>(R.id.itemPicture)
+    private val textView = itemView.findViewById<TextView>(R.id.itemPicture)
 
     fun bind(path: String) {
-        name.text = path.toString()
+        textView.text = path
     }
 }

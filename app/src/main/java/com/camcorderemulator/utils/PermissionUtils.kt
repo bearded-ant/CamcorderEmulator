@@ -19,39 +19,6 @@ import com.camcorderemulator.ui.MainActivity
 
 object PermissionUtils {
 
-
-//    @RequiresApi(Build.VERSION_CODES.Q)
-//    fun hasPermissions(context: Context): Boolean {
-//        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//            Environment.isExternalStorageManager()
-//        } else
-//            (ContextCompat.checkSelfPermission(
-//                context,
-//                Manifest.permission.ACCESS_MEDIA_LOCATION
-//            )
-//                    == PackageManager.PERMISSION_GRANTED)
-//    }
-//
-//    fun requestPermissions(activity: Activity, requestCode: Int) {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//            try {
-//                val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-//                intent.addCategory("android.intent.category.DEFAULT")
-//                intent.data = Uri.parse(String.format("package:%s", activity.packageName))
-//                activity.startActivityForResult(intent, requestCode)
-//            } catch (e: Exception) {
-//                val intent = Intent()
-//                intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION
-//                activity.startActivityForResult(intent, requestCode)
-//            }
-//        } else {
-//            ActivityCompat.requestPermissions(
-//                activity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-//                requestCode
-//            )
-//        }
-//    }
-
     @RequiresApi(Build.VERSION_CODES.Q)
     fun requestPermission(activity: MainActivity, arl: ActivityResultLauncher<String>) {
         when {
