@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/galleryFragment">
+    <fragment
+        android:id="@+id/camcordersListFragment"
+        android:name="com.camcorderemulator.ui.camcorders.CamcordersListFragment"
+        android:label="CamcordersListFragment" />
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.camcorderemulator.ui.gallerry.GalleryFragment"
+        android:label="GalleryFragment" >
+        <action
+            android:id="@+id/actionGalleryToDetailFragment"
+            app:destination="@id/imageDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDetailFragment"
+        android:name="com.camcorderemulator.ui.imagedetail.ImageDetailFragment"
+        android:label="ImageDetailFragment" >
+        <argument android:name="imgPath"
+            app:argType="string" />
+    </fragment>
+</navigation>

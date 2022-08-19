@@ -2,6 +2,7 @@ package com.camcorderemulator.ui.gallerry
 
 import android.view.View
 import android.widget.ImageView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.gbhomework.camcorderemulator.R
 import com.squareup.picasso.Picasso
@@ -13,12 +14,17 @@ class GalleryHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(path: String) {
         val imgFile = File(path)
 
-        if (imgFile.exists())
+        if (imgFile.exists()) {
             Picasso.get()
                 .load(imgFile)
                 .resize(50, 50)
                 .centerCrop()
                 .into(imageView)
 
+            imageView.setOnClickListener {
+                val navigationAction = GalleryFragmentDirections.actionGalleryToDetailFragment(path)
+                imageView.findNavController().navigate(navigationAction)
+            }
+        }
     }
 }
