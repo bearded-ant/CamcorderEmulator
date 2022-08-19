@@ -3,8 +3,9 @@
 .idea
 /build
 /app/build
-/captures
-.DS_Store
-.externalNativeBuild
-.cxx
+/app/src/test
+/app/src/androidTest
+/app/libs
+/app/sampledata
+/gradle
 local.properties
