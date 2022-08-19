@@ -10,10 +10,10 @@
     android:focusable="true"
     app:cardCornerRadius="@dimen/cardview_default_radius">
 
-    <TextView
+    <ImageView
         android:id="@+id/itemPicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="фоточка" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/image_from_local_storage"/>
 
 </com.google.android.material.card.MaterialCardView>
