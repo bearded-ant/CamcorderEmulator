@@ -9,8 +9,16 @@
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/frImageDetailPicture"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:clickable="true"
-        android:focusable="true" />
+        android:focusable="true"
+        android:layout_weight="3"/>
 
+<!--  временное поле  -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frImageDetailMetadata"
+        android:layout_weight="1"/>
+<!--   !!  -->
 </androidx.appcompat.widget.LinearLayoutCompat>
