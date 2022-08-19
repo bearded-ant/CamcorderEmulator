@@ -10,7 +10,7 @@ class GalleryAdapter(private val resources: List<String>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_camcorder, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_picture, parent, false)
         return GalleryHolder(view)
     }
 
