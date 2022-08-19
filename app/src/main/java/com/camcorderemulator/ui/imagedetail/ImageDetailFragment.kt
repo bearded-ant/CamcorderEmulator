@@ -1,6 +1,5 @@
 package com.camcorderemulator.ui.imagedetail
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ScaleGestureDetector
@@ -30,18 +29,8 @@ class ImageDetailFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        scalingDetector = ScaleGestureDetector(
-            requireContext(),
-            ScalingListener(1f, binding.frImageDetailPicture)
-        )
-        binding.frImageDetailPicture.setOnTouchListener { _, motionEvent ->
-            scalingDetector!!.onTouchEvent(motionEvent)
-            true
-        }
 
         val imageFile = File(pathArgument)
         if (imageFile.exists())

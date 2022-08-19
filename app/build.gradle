@@ -61,4 +61,6 @@ dependencies {
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    //PhotoView
+    implementation 'com.github.Baseflow:PhotoView:2.3.0'
 }
