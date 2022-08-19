@@ -7,6 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.camcorderemulator.ui.gallerry.GalleryFragment
+import com.camcorderemulator.ui.imagedetail.ImageDetailFragment
 import com.camcorderemulator.utils.PermissionUtils
 import com.gbhomework.camcorderemulator.R
 
@@ -33,7 +34,8 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
 //            .replace(R.id.fragment_container, CamcordersListFragment())
-            .replace(R.id.fragment_container, GalleryFragment())
+//            .replace(R.id.fragment_container, GalleryFragment())
+            .replace(R.id.fragment_container, ImageDetailFragment())
             .commit()
     }
 }
