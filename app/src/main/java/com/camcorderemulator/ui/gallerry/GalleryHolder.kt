@@ -1,4 +1,4 @@
-package com.camcorderemulator.ui.pictures
+package com.camcorderemulator.ui.gallerry
 
 import android.view.View
 import android.widget.TextView
