@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CamcorderEmulator</string>
+    <string name="image_from_local_storage">image from local storage</string>
 </resources>

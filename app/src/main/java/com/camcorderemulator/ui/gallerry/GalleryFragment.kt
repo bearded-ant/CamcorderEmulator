@@ -1,4 +1,4 @@
-package com.camcorderemulator.ui.pictures
+package com.camcorderemulator.ui.gallerry
 
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +23,6 @@ class GalleryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentGalleryBinding.inflate(layoutInflater)
-        Toast.makeText(requireContext(), "галерея", Toast.LENGTH_SHORT).show()
 
         initRecycler()
 
@@ -38,9 +37,8 @@ class GalleryFragment : Fragment() {
 
     private fun initRecycler() {
         val images = ImageRepoImpl(requireContext()).getImages()
-        Log.d("что  картинках", images.toString())
         val recycler = binding.frGalleryRecycler
-        recycler.layoutManager = GridLayoutManager(requireContext(),2)
+        recycler.layoutManager = GridLayoutManager(requireContext(), 3)
 
         val adapter = GalleryAdapter(images)
         recycler.adapter = adapter
