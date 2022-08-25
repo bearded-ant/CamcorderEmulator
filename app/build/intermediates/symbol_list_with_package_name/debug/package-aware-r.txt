@@ -2623,6 +2623,7 @@ id accessibility_custom_action_8
 id accessibility_custom_action_9
 id actionDown
 id actionDownUp
+id actionGalleryToDetailFragment
 id actionUp
 id action_bar
 id action_bar_activity_content
@@ -2675,6 +2676,7 @@ id bounceStart
 id buttonPanel
 id cache_measures
 id callMeasure
+id camcordersListFragment
 id cameraName
 id cancel_button
 id carryVelocity
@@ -2782,10 +2784,13 @@ id floating
 id forever
 id frCamcordersListRecycler
 id frGalleryRecycler
+id frImageDetailPicture
+id fragmentContainerView
 id fragment_container
 id fragment_container_view_tag
 id frost
 id fullscreen_header
+id galleryFragment
 id ghost_view
 id ghost_view_holder
 id gone
@@ -2807,6 +2812,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageDetailFragment
 id imageView
 id immediateStop
 id included
@@ -2832,6 +2838,7 @@ id listMode
 id list_item
 id locale
 id ltr
+id main_navigation
 id masked
 id match_constraint
 id match_parent
@@ -2927,7 +2934,6 @@ id pathRelative
 id peekHeight
 id percent
 id performance
-id perm
 id pin
 id position
 id postLayout
@@ -3193,6 +3199,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_camcorders_list
 layout fragment_gallery
+layout fragment_image_detail
 layout item_camcorder
 layout item_camera
 layout item_picture
@@ -3272,6 +3279,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation main_navigation
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -3316,6 +3324,7 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string image_from_local_storage
 string item_view_role_description
 string label
 string m3_ref_typeface_brand_medium

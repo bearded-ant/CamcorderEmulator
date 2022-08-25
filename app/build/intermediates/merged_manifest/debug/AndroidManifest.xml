@@ -16,7 +16,7 @@
 
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera" />
-
+    tools:ignore="ScopedStorage" />
     <application
         android:name="com.camcorderemulator.App"
         android:allowBackup="true"
@@ -62,6 +62,10 @@
                 android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
         </service>
 
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.gbhomework.camcorderemulator.com.squareup.picasso"
+            android:exported="false" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.gbhomework.camcorderemulator.androidx-startup"

@@ -27,8 +27,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -37,6 +37,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    buildToolsVersion '30.0.3'
 }
 
 dependencies {
@@ -64,4 +65,9 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.1")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.1")
 
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //PhotoView
+    implementation 'com.github.Baseflow:PhotoView:2.3.0'
 }

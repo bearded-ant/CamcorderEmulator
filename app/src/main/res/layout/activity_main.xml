@@ -7,10 +7,11 @@
     android:layout_height="match_parent"
     tools:context="com.camcorderemulator.ui.MainActivity">
 
-    <TextView
-        android:id="@+id/perm"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="asdasdasd" />
-
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_navigation" />
 </FrameLayout>
