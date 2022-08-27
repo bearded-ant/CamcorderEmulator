@@ -70,4 +70,8 @@ dependencies {
 
     //PhotoView
     implementation 'com.github.Baseflow:PhotoView:2.3.0'
+
+    //metadata
+    implementation 'com.drewnoakes:metadata-extractor:2.18.0'
+
 }
