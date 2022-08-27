@@ -2,16 +2,14 @@ package com.camcorderemulator.ui.gallerry
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.camcorderemulator.data.ImageRepoImpl
 import com.gbhomework.camcorderemulator.databinding.FragmentGalleryBinding
 
-class GalleryFragment : Fragment() {
+class GalleryFragment : Fragment(){
 
     private var _binding: FragmentGalleryBinding? = null
     private val binding
@@ -23,7 +21,7 @@ class GalleryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentGalleryBinding.inflate(layoutInflater)
-
+        Toast.makeText(requireContext(), "галерея", Toast.LENGTH_SHORT).show()
         initRecycler()
 
         return binding.root
@@ -43,4 +41,7 @@ class GalleryFragment : Fragment() {
         val adapter = GalleryAdapter(images)
         recycler.adapter = adapter
     }
+
+
+
 }
