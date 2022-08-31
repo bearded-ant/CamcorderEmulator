@@ -74,4 +74,7 @@ dependencies {
     //metadata
     implementation 'com.drewnoakes:metadata-extractor:2.18.0'
 
+    //imageMagik
+    implementation 'org.objenesis:objenesis:3.2'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

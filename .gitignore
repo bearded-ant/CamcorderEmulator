@@ -4,7 +4,6 @@
 /app/build
 /app/src/test
 /app/src/androidTest
-/app/libs
 /app/sampledata
 /gradle
 local.properties
