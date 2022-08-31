@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/galleryFragment">
+    app:startDestination="@id/renderResultFragment">
     <fragment
         android:id="@+id/camcordersListFragment"
         android:name="com.camcorderemulator.ui.camcorders.CamcordersListFragment"
@@ -15,6 +15,9 @@
         <action
             android:id="@+id/actionGalleryToDetailFragment"
             app:destination="@id/imageDetailFragment" />
+        <action
+            android:id="@+id/action_galleryFragment_to_renderResultFragment"
+            app:destination="@id/renderResultFragment" />
     </fragment>
     <fragment
         android:id="@+id/imageDetailFragment"
@@ -23,4 +26,8 @@
         <argument android:name="imgPath"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/renderResultFragment"
+        android:name="com.camcorderemulator.ui.imagedetail.RenderResultFragment"
+        android:label="RenderResultFragment" />
 </navigation>

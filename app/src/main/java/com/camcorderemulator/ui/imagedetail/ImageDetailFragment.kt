@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.drew.imaging.ImageMetadataReader
+import com.gbhomework.camcorderemulator.R
 import com.gbhomework.camcorderemulator.databinding.FragmentImageDetailBinding
 import com.squareup.picasso.Picasso
 import java.io.File
@@ -35,6 +36,7 @@ class ImageDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val imageFile = File(pathArgument)
+
         if (imageFile.exists()) {
             Picasso.get().load(imageFile).into(binding.frImageDetailPicture)
             val metadata = ImageMetadataReader.readMetadata(imageFile)
