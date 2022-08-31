@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gbhomework.camcorderemulator.R
 
-class RenderResultAdapter : RecyclerView.Adapter<RenderResultHolder>() {
+class RenderResultAdapter(val path: String) : RecyclerView.Adapter<RenderResultHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RenderResultHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.item_rendered_image, parent, false)
@@ -13,7 +13,7 @@ class RenderResultAdapter : RecyclerView.Adapter<RenderResultHolder>() {
     }
 
     override fun onBindViewHolder(holder: RenderResultHolder, position: Int) {
-        holder.getRenderImage(R.drawable.hdr, 800, 600)
+        holder.getRenderImage(path, 1920, 1080)
     }
 
     override fun getItemCount(): Int = 1

@@ -23,8 +23,8 @@ class GalleryHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
             imageView.setOnClickListener {
 //                val navigationAction = GalleryFragmentDirections.actionGalleryToDetailFragment(path)
-//                imageView.findNavController().navigate(navigationAction)
-                imageView.findNavController().navigate(R.id.action_galleryFragment_to_renderResultFragment)
+                val navigationAction = GalleryFragmentDirections.actionGalleryFragmentToRenderResultFragment(path)
+                imageView.findNavController().navigate(navigationAction)
             }
         }
     }
