@@ -15,12 +15,23 @@
         <action
             android:id="@+id/actionGalleryToDetailFragment"
             app:destination="@id/imageDetailFragment" />
+        <action
+            android:id="@+id/action_galleryFragment_to_renderResultFragment"
+            app:destination="@id/renderResultFragment" />
     </fragment>
     <fragment
         android:id="@+id/imageDetailFragment"
         android:name="com.camcorderemulator.ui.imagedetail.ImageDetailFragment"
         android:label="ImageDetailFragment" >
         <argument android:name="imgPath"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/renderResultFragment"
+        android:name="com.camcorderemulator.ui.imagedetail.RenderResultFragment"
+        android:label="RenderResultFragment" >
+        <argument
+            android:name="imgPath"
             app:argType="string" />
     </fragment>
 </navigation>

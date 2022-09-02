@@ -3,7 +3,6 @@ package com.camcorderemulator.ui.imagedetail
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.ScaleGestureDetector
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -18,7 +17,6 @@ class ImageDetailFragment : Fragment() {
     private val binding
         get() = _binding!!
 
-    private var scalingDetector: ScaleGestureDetector? = null
     private var pathArgument: String? = null
 
     override fun onCreateView(
@@ -35,6 +33,7 @@ class ImageDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val imageFile = File(pathArgument)
+
         if (imageFile.exists()) {
             Picasso.get().load(imageFile).into(binding.frImageDetailPicture)
             val metadata = ImageMetadataReader.readMetadata(imageFile)
