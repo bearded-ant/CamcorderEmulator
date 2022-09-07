@@ -18,9 +18,9 @@ class RenderResultHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         Picasso.get()
             .load(imgFile)
 //            .load(path)
-            .transform(ImageTransformation(6080, 3085))
-//            .resize(width, height)
-//            .centerCrop()
+//            .transform(ImageTransformation(6080, 3085))
+            .resize(width, height)
+            .centerCrop()
             .into(imageItem)
     }
 //    }
