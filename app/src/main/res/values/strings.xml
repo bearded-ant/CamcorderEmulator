@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">CamcorderEmulator</string>
     <string name="image_from_local_storage">image from local storage</string>
+    <string name="choice_matrix_option">Choice camcorder</string>
+    <string name="choice_focal_options">choice focal options</string>
 </resources>
