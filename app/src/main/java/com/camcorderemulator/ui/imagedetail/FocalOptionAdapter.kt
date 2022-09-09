@@ -5,11 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.camcorderemulator.domain.Camcorder
+import com.camcorderemulator.domain.Lens
 import com.gbhomework.camcorderemulator.R
 import com.google.android.material.textview.MaterialTextView
 
-class FocalOptionAdapter(private val items: List<Camcorder>) :
+class FocalOptionAdapter(private val items: List<Lens>) :
     RecyclerView.Adapter<FocalOptionAdapter.FocalOptionHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FocalOptionHolder {
@@ -28,9 +28,10 @@ class FocalOptionAdapter(private val items: List<Camcorder>) :
         private val img = itemView.findViewById<AppCompatImageView>(R.id.itemFocalOptionImage)
         private val desk = itemView.findViewById<MaterialTextView>(R.id.itemFocalOptionDescription)
 
-        fun bind(camcorder: Camcorder) {
-            img.setImageResource(R.drawable.focal_2_8)
-            desk.text = camcorder.angle
+        fun bind(lens: Lens) {
+            img.setImageResource(lens.imgSrc)
+            val description = "${lens.angleX}/${lens.angleY}"
+            desk.text = description
         }
     }
 }

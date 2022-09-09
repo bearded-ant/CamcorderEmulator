@@ -11,7 +11,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.TransitionManager
 import androidx.viewpager2.widget.ViewPager2
-import com.camcorderemulator.data.MockCamcordersRepoImpl
+import com.camcorderemulator.data.MockLensRepoImpl
 import com.gbhomework.camcorderemulator.databinding.FragmentRenderResultBinding
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.transition.MaterialContainerTransform
@@ -32,7 +32,7 @@ class RenderResultFragment : Fragment() {
         _binding = FragmentRenderResultBinding.inflate(layoutInflater)
         pathArgument = RenderResultFragmentArgs.fromBundle(requireArguments()).imgPath
         Toast.makeText(requireContext(), "render", Toast.LENGTH_SHORT).show()
-//        binding.frRenderResultFab.visibility = View.VISIBLE
+
         initViewPager()
         initClickListeners()
         initRecyclerFocalOption()
@@ -43,14 +43,13 @@ class RenderResultFragment : Fragment() {
             TransitionManager.beginDelayedTransition(binding.coordinator, transition)
             binding.frRenderResultFab.visibility = View.VISIBLE
         }
-
         return binding.root
     }
 
     private fun initRecyclerFocalOption() {
         val recycler = binding.frRenderResultOptionsRecycler
         recycler.layoutManager = LinearLayoutManager(requireContext())
-        val adapter = FocalOptionAdapter(MockCamcordersRepoImpl().getAllData())
+        val adapter = FocalOptionAdapter(MockLensRepoImpl().getAllLenses())
 
         recycler.adapter = adapter
     }
@@ -71,10 +70,7 @@ class RenderResultFragment : Fragment() {
 
             TransitionManager.beginDelayedTransition(binding.coordinator, transition)
 
-            binding.frRenderResultOptionCard.visibility = View.VISIBLE
-            binding.frRenderResultScrim.visibility = View.VISIBLE
-
-            binding.frRenderResultFab.visibility = View.INVISIBLE
+            makeFabVisible(false)
         }
 
         binding.frRenderResultScrim.setOnClickListener {
@@ -86,12 +82,20 @@ class RenderResultFragment : Fragment() {
 
             TransitionManager.beginDelayedTransition(binding.coordinator, transition)
 
+            makeFabVisible(true)
+        }
+    }
+
+    private fun makeFabVisible(visible: Boolean) {
+        if (!visible) {
+            binding.frRenderResultOptionCard.visibility = View.VISIBLE
+            binding.frRenderResultScrim.visibility = View.VISIBLE
+            binding.frRenderResultFab.visibility = View.INVISIBLE
+        } else {
             binding.frRenderResultOptionCard.visibility = View.INVISIBLE
             binding.frRenderResultScrim.visibility = View.INVISIBLE
-
             binding.frRenderResultFab.visibility = View.VISIBLE
         }
-
     }
 
     private fun buildContainerTransformation() =
